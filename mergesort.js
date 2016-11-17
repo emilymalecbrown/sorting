@@ -1,6 +1,4 @@
-function Split (arr)
-{
-
+function split (arr) {
 	var middle = Math.floor(arr.length / 2);
 	var leftArr = arr.slice(0, middle);
 	var rightArr = arr.slice(middle);
@@ -8,8 +6,7 @@ function Split (arr)
 	return [leftArr, rightArr];
 }
 
-function Merge (arr1, arr2)
-{
+function merge (arr1, arr2) {
 	var result = [];
 
 	while (arr1.length && arr2.length) {
@@ -35,9 +32,8 @@ function mergeSort (array) {
 		return array; 
 	}
 
-	var splitLeft = Split(array)[0];
-	var splitRight = Split(array)[1];
+	var splitLeft = split(array)[0];
+	var splitRight = split(array)[1];
 
-	return Merge(mergeSort(splitLeft), mergeSort(splitRight));
-
+	return merge(mergeSort(splitLeft), mergeSort(splitRight));
 }
